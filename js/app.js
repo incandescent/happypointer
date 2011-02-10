@@ -1,22 +1,22 @@
 (function(){
 
   // Geo namespace
-  var Geo;
+  var HappyPointer;
   if (typeof exports !== 'undefined') {
-    Geo = exports;
+    HappyPointer = exports;
   } else {
-    Geo = this.Geo = {};
+    HappyPointer = this.HappyPointer = {};
   }
 
   // options
-  Geo.options = {
+  HappyPointer.options = {
     search: "coffee",
     simplegeokey: 'yXPesMqDrYfbHGvNzFYvGKxEbWmKmvC5'
   };
 
   // contains set of helpers for interaction
   // with simplegeo service
-  Geo.Service = (function(key) {
+  HappyPointer.Service = (function(key) {
     // simplegeo clients
     var placesClient = new simplegeo.PlacesClient(key);
     var client = new simplegeo.Client(key);
@@ -96,18 +96,18 @@
   });
     
   // init
-  Geo.init = function(ops) {
-    _.extend(Geo.options, ops);
+  HappyPointer.init = function(ops) {
+    _.extend(HappyPointer.options, ops);
 
     var currentLocation = new Location(),
       locations = new Locations(),
-      geoService = Geo.Service(Geo.options.simplegeokey);
+      geoService = HappyPointer.Service(HappyPointer.options.simplegeokey);
 
     // create views
     new MapView({collection: locations, model: currentLocation});
     new ClosestView({collection: locations});
     new LocationListView({collection: locations});
-    geoService.search(Geo.options.search, currentLocation, locations);
+    geoService.search(HappyPointer.options.search, currentLocation, locations);
   }
 
   // represents location model
@@ -141,10 +141,11 @@
       this.directionsService = new google.maps.DirectionsService();
       this.directionsDisplay = new google.maps.DirectionsRenderer();
 
+      // map options
       var options = {
-    	    zoom: 12,
-		    mapTypeId: google.maps.MapTypeId.ROADMAP
-		  };
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
 		  
       this.map = new google.maps.Map(this.el.get(0), options);
       // wire map with directions display
@@ -228,5 +229,5 @@
 })(this);
 
 $(function(){
-  Geo.init({search: "coffee"});
+  HappyPointer.init({search: "coffee"});
 });
