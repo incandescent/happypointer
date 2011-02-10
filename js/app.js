@@ -67,9 +67,9 @@
         });
       },
       
-      // gets current location based
+      // gets current location
       // uses navigation object and falls back
-      // to simplegeo client in navigation object 
+      // to simplegeo client if navigation object 
       // is not present
       getCurrentLoc: function(callbacks) {
         callbacks = callbacks || {};
