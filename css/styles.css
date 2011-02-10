@@ -1,0 +1,35 @@
+body {
+  /* background-color: #f8f7f3; */
+}
+
+.ui-mobile .ui-page {
+  /* background-color: #f8f7f3; */
+}
+
+.ui-mobile #logo {
+  margin-bottom: 20px;
+}
+
+
+h3 {
+  /* color: #e8eabf; */
+  text-shadow: 1px 1px 1px #eee;
+}
+
+
+.page_map {
+	height: 100%;
+	width:100%;
+	padding: 0;
+}
+
+.main_page {
+	height: 100%;
+	width:100%;
+	padding: 0;
+}
+
+.map_canvas {
+	height: 100%;
+	width:100%;
+}
