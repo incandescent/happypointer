@@ -10,7 +10,7 @@
 
   // options
   Geo.options = {
-    search: "gas station",
+    search: "coffee",
     simplegeokey: 'yXPesMqDrYfbHGvNzFYvGKxEbWmKmvC5'
   };
 
@@ -228,5 +228,5 @@
 })(this);
 
 $(function(){
-  Geo.init({search: "gas stations"});
+  Geo.init({search: "coffee"});
 });
