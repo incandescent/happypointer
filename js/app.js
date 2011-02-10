@@ -141,10 +141,11 @@
       this.directionsService = new google.maps.DirectionsService();
       this.directionsDisplay = new google.maps.DirectionsRenderer();
 
+      // map options
       var options = {
-    	    zoom: 12,
-		    mapTypeId: google.maps.MapTypeId.ROADMAP
-		  };
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
 		  
       this.map = new google.maps.Map(this.el.get(0), options);
       // wire map with directions display
